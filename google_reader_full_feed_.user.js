@@ -14,6 +14,7 @@ var SITE_INFO = [
     },
     {
         url: 'http://www.f1news.ru',
+//        xpath: '//div[@id="textBlock"',
         xpath: '//div[@id="material"]',
         charset: 'windows-1251'
     },
@@ -21,6 +22,11 @@ var SITE_INFO = [
         url: 'http://www.f1-world.ru',
         xpath: '//div[@class="news"]',
         charset: 'windows-1251'
+    },
+    {
+        url: 'http://habrahabr.ru',
+        xpath: '//div[@class="content"]',
+        charset: 'utf-8'
     }
 /*
     {
