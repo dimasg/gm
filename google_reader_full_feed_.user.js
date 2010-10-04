@@ -14,7 +14,7 @@ var SITE_INFO = [
     },
     {
         url: 'http://www.f1news.ru',
-//        xpath: '//div[@id="textBlock"',
+//        xpath: '//div[@id="textBlock"]',
         xpath: '//div[@id="material"]',
         charset: 'windows-1251'
     },
