@@ -27,6 +27,11 @@ var SITE_INFO = [
         url: 'http://habrahabr.ru',
         xpath: '//div[@class="content"]',
         charset: 'utf-8'
+    },
+    {
+        url: 'http://webplanet.ru',
+        xpath: '//div[@class="contentblock"]',
+        charset: 'utf-8'
     }
 /*
     {
