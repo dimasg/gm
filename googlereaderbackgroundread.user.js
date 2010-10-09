@@ -41,7 +41,8 @@ document.addEventListener('keypress', function(event) {
 
  	// when 'b'	 is pressed ->  open the item in a new background tab (intended to be used when the item is collapsed)
  	// when 'Enter' is pressed ->  open the item in a new background tab and collapse the item (intended to be used when the item is expanded)
-	if ( (String.fromCharCode(event.which) == "b" && !event.ctrlKey) || event.keyCode == 13) {
+    var keyChar = String.fromCharCode(event.which);
+	if ( ((keyChar == 'b'||keyChar == 'и') && !event.ctrlKey) || event.keyCode == 13) {
 
     	var entry = document.getElementById('current-entry');
 
@@ -61,7 +62,7 @@ document.addEventListener('keypress', function(event) {
 	
 	// when 'b' or 's' is pressed -> mark item read, so that it will be counted in Trends as read
 	// (it's achieved by imitation of pressing 'm' key)
-	if ( (String.fromCharCode(event.which) == "b" || String.fromCharCode(event.which) == "s") && !event.ctrlKey) {
+	if ( (keyChar == 'b' || keyChar == 'и' || keyChar == 's' || keyChar == 'ы') && !event.ctrlKey) {
  		var ev = document.createEvent("KeyboardEvent");
 		ev.initKeyEvent("keypress", true, true, null, false, false, false, false, 0x4D, 109)
 		document.dispatchEvent(ev);
