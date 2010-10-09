@@ -207,8 +207,8 @@ if (AUTO_FETCH) {
 document.addEventListener(
     'keydown',
     function(event) {
-        var key = String.fromCharCode(event.keyCode);
-        if (key.toLowerCase() == 'z') {
+        var key = String.fromCharCode(event.keyCode).toLowerCase();
+        if (key == 'z' || key == 'я') {
             FullFeed.getCurrentEntry();
         }
     },
