@@ -32,6 +32,11 @@ var SITE_INFO = [
         url: 'http://webplanet.ru',
         xpath: '//div[@class="contentblock"]',
         charset: 'utf-8'
+    },
+    {
+        url: 'http://www.securitylab.ru',
+        xpath: '//div[@class="news_source"]',
+        charset: 'windows-1251'
     }
 /*
     {
