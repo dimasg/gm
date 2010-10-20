@@ -35,8 +35,9 @@ jQuery.noConflict();
   new_button.click(open_entry);
 
   // bind key-handler
-  jQuery(document).keydown(function(e) {
-    if ( ! (e.altKey || e.ctrlKey || e.metaKey) && e.which == background_key ) {
+  jQuery(document).keypress(function(e) {
+    var key = String.fromCharCode(e.charCode? e.charCode:e.keyCode).toLowerCase();
+    if ( ! (e.altKey || e.ctrlKey || e.metaKey) && (key == 'b' || key == 'и') ) {
       open_entry();
     }
   });

@@ -210,9 +210,9 @@ if (AUTO_FETCH) {
 }
 
 document.addEventListener(
-    'keydown',
+    'keypress',
     function(event) {
-        var key = String.fromCharCode(event.keyCode).toLowerCase();
+        var key = String.fromCharCode(event.charCode? event.charCode:event.keyCode).toLowerCase();
         if (key == 'z' || key == 'я') {
             FullFeed.getCurrentEntry();
         }
