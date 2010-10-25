@@ -37,6 +37,11 @@ var SITE_INFO = [
         url: 'http://www.securitylab.ru',
         xpath: '//div[@class="news_source"]',
         charset: 'windows-1251'
+    },
+    {
+        url: 'http://www.diveplanet.ru',
+        xpath: '//table[@class="blog-table-post-table"]',
+        charset: 'windows-1251'
     }
 /*
     {
