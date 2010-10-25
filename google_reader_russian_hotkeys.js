@@ -15,25 +15,17 @@ var g_timeout = 2000;
 
 var keyPress = function(event) {
     if (event.ctrlKey || event.altKey || event.metaKey) return;
-    var code = String.fromCharCode(event.charCode? event.charCode:event.keyCode);
-    if (event.shiftKey) code = '@' + code;
-    if (code == 'G') {
-        document.removeEventListener('keypress', keyPress, true);
-        setTimeout(function() {
-          document.addEventListener('keypress', keyPress, true);
-        }, g_timeout);
-        return;
-    }
-
+    var code = String.fromCharCode(event.charCode? event.charCode:event.keyCode).toLowerCase();
+    var is_shift = event.shiftKey;
     var cha;
     switch (code) {
-    case 'т': case 'Т': case '@т': case '@Т':
+    case 'т':
         cha = 'N'; break;
-    case 'з': case 'З': case '@з': case '@З':
+    case 'з':
         cha = 'P'; break;
-    case 'щ': case 'Щ': case '@щ': case '@Щ':
+    case 'щ':
         cha = 'O'; break;
-    case 'ч': case 'Ч': case '@ч': case '@Ч':
+    case 'ч':
         cha = 'X'; break;
     defalut: return;
     }
@@ -42,21 +34,7 @@ var keyPress = function(event) {
     event.stopPropagation();
 
     evt = document.createEvent('KeyboardEvent');
-    switch (code) {
-    case 'т': case 'Т':
-    case 'щ': case 'Щ':
-    case 'з': case 'З':
-    case 'ч': case 'Ч':
-        evt.initKeyEvent('keypress', 1, 1, null, 0, 0, 0, 0, cha, 0);
-        break;
-    case '@т': case '@Т':
-    case '@щ': case '@Щ':
-    case '@з': case '@З':
-    case '@ч': case '@Ч':
-        evt.initKeyEvent('keypress', 1, 1, null, 0, 0, 1, 0, cha, 0);
-        break;
-    default: return;
-    }
+    evt.initKeyEvent('keypress', 1, 1, null, 0, 0, is_shift, 0, cha, 0);
     document.dispatchEvent(evt);
 }
 
