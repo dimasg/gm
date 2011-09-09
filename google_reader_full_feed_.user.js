@@ -42,6 +42,11 @@ var SITE_INFO = [
         url: 'http://www.diveplanet.ru',
         xpath: '//table[@class="blog-table-post-table"]',
         charset: 'windows-1251'
+    },
+    {
+        url: 'http://googlephones.ru',
+        xpath: '//div[@class="entrybody"]',
+        charset: 'utf-8'
     }
 /*
     {
